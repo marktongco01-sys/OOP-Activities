@@ -1,1 +1,26 @@
+import java.util.Scanner;
 
+public class WeightedFinalGrade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // quiz grade
+        System.out.print("Enter quiz grade: ");
+        double quiz = scanner.nextDouble();
+        
+        // project grade
+        System.out.print("Enter project grade: ");
+        double project = scanner.nextDouble();
+        
+        // exam grade
+        System.out.print("Enter exam grade: ");
+        double exam = scanner.nextDouble();
+        
+        // Calculate weighted final grade
+        // Quiz = 30%, Project = 30%, Exam = 40%
+        double finalGrade = (quiz * 0.30) + (project * 0.30) + (exam * 0.40);
+        System.out.println("Final Grade: " + finalGrade);
+        
+        scanner.close();
+    }
+}
