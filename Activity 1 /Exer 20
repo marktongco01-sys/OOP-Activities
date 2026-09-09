@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class StorePurchaseCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Get all inputs
+        System.out.print("Enter product price: ");
+        double price = scanner.nextDouble();
+        
+        System.out.print("Enter quantity: ");
+        int quantity = scanner.nextInt();
+        
+        System.out.print("Enter discount percentage: ");
+        double discountPercent = scanner.nextDouble();
+        
+        System.out.print("Enter amount paid: ");
+        double amountPaid = scanner.nextDouble();
+        
+        // Calculate gross amount
+        double grossAmount = price * quantity;
+        
+        // Calculate discount amount
+        double discountAmount = grossAmount * (discountPercent / 100);
+        
+        // Calculate amount after discount
+        double afterDiscount = grossAmount - discountAmount;
+        
+        // Calculate VAT (12%)
+        double vat = afterDiscount * 0.12;
+        
+        // Calculate final bill
+        double finalBill = afterDiscount + vat;
+        
+        // Calculate change or difference
+        double changeOrDifference = amountPaid - finalBill;
+        
+        // Determine payment status using ternary operator
+        String paymentStatus = (amountPaid >= finalBill) ? "SUFFICIENT PAYMENT" : "INSUFFICIENT PAYMENT";
+        
+        // Display all results
+        System.out.println("Gross=" + grossAmount + 
+                         "; Discount=" + discountAmount + 
+                         "; After Discount=" + afterDiscount + 
+                         "; VAT=" + vat + 
+                         "; Final Bill=" + finalBill + 
+                         "; " + (amountPaid >= finalBill ? "Change" : "Difference") + "=" + 
+                         (amountPaid >= finalBill ? changeOrDifference : -changeOrDifference) + 
+                         "; " + paymentStatus);
+        
+        scanner.close();
+    }
+}
