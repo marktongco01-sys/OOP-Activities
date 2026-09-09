@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class AcademicEligibilityChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // grade
+        System.out.print("Enter grade: ");
+        double grade = scanner.nextDouble();
+        
+        // attendance percentage
+        System.out.print("Enter attendance percentage: ");
+        double attendance = scanner.nextDouble();
+        
+        // Check eligibility using logical AND
+        boolean eligible = (grade >= 85) && (attendance >= 80);
+        
+        System.out.println("Eligible: " + eligible);
+        scanner.close();
+    }
+}
