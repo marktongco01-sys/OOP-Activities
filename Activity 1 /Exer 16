@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class PassOrFailTernary {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Get the grade
+        System.out.print("Enter grade: ");
+        double grade = scanner.nextDouble();
+        
+        // Using ternary operator to determine PASSED or FAILED
+        String result = (grade >= 75) ? "PASSED" : "FAILED";
+        
+        // result
+        System.out.println("Result: " + result);
+        scanner.close();
+    }
+}
