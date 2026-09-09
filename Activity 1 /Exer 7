@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class BMICalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // weight in kilograms
+        System.out.print("Enter weight in kilograms: ");
+        double weight = scanner.nextDouble();
+        
+        // height in meters
+        System.out.print("Enter height in meters: ");
+        double height = scanner.nextDouble();
+        
+        // Calculates BMI using the formula: BMI = weight / (height * height)
+        double bmi = weight / (height * height);
+        
+        // Displays the BMI value
+        System.out.println("BMI: " + bmi);
+        
+        scanner.close();
+    }
+}
